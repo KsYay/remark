@@ -60,6 +60,9 @@ function addKeyboardEventListeners (events) {
       case 't':
         events.emit('resetTimer');
         break;
+      case 'a':
+        events.emit('toggleAutoPlay');
+        break;
       case 'h':
       case '?':
         events.emit('toggleHelp');

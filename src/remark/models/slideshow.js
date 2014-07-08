@@ -3,6 +3,7 @@ var Navigation = require('./slideshow/navigation')
   , utils = require('../utils')
   , Slide = require('./slide')
   , Parser = require('../parser')
+  , autoPlayer = require('./slideshow/autoplayer')
   ;
 
 module.exports = Slideshow;
@@ -18,6 +19,8 @@ function Slideshow (events, options) {
   // Extend slideshow functionality
   Events.call(self, events);
   Navigation.call(self, events);
+
+  self.autoPlayer = new autoPlayer(events, options, self);
 
   self.loadFromString = loadFromString;
   self.update = update;
