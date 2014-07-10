@@ -4,19 +4,19 @@ function autoPlayer(events, options, slideshow){
   if(options.hasOwnProperty('autoplay')){
     var self = this;
 
-    this.play = false;
+    self.play = false; // on pause at start
 
-    this.slideshow = slideshow;
-    this.counter = 0;
-    this.timing  = options.autoplay;
-    this.events  = events;
+    self.slideshow = slideshow;
+    self.counter   = 0;
+    self.timing    = options.autoplay; // time for each slide
+    self.events    = events;
 
-    events.on('gotoPreviousSlide', function(){ self.reset.call(self); });
-    events.on('gotoNextSlide', function(){ self.reset.call(self); });
+    events.on('gotoPreviousSlide', function(){ self.reset.call(self); }); // reset time on slide switching
+    events.on('gotoNextSlide',     function(){ self.reset.call(self); });
 
-    events.on('toggleAutoPlay', function(){ self.togglePause.call(self); });
+    events.on('toggleAutoPlay',    function(){ self.togglePause.call(self); }); // key 'a' toggle pause of playing
 
-    this.timer = setInterval(function(){
+    setInterval(function(){
       self.update.call(self);
     }, 100);
   }
@@ -28,12 +28,11 @@ autoPlayer.prototype.update = function(){
 
       this.events.emit('gotoNextSlide');
 
+      // disable auto playing on last slide
       if(this.slideshow.getCurrentSlideNo()===this.slideshow.getSlideCount()){
         this.reset();
         this.togglePause();
       }
-
-      this.counter = 0;
     }
     this.counter++;
   }
@@ -45,5 +44,5 @@ autoPlayer.prototype.reset = function(){
 };
 
 autoPlayer.prototype.togglePause = function(){
-  this.play = this.play ? false : true;
+  this.play = !this.play;
 };
