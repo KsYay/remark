@@ -38,20 +38,37 @@ SlideView.prototype.scale = function (containerElement) {
   self.scaler.scaleToFit(self.scalingElement, containerElement);
 };
 
-SlideView.prototype.show = function () {
+SlideView.prototype.show = function (animation) {
   utils.addClass(this.containerElement, 'remark-visible');
   utils.removeClass(this.containerElement, 'remark-fading');
+
+  if (animation.enabled) {
+    utils.removeClass(this.containerElement, animation.class);
+    utils.removeClass(this.containerElement, animation.hide);
+    utils.addClass(this.containerElement, animation.class);
+    utils.addClass(this.containerElement, animation.show);
+  }
 };
 
-SlideView.prototype.hide = function () {
+SlideView.prototype.hide = function (animation) {
   var self = this;
   utils.removeClass(this.containerElement, 'remark-visible');
+
+  if (animation.enabled) {
+    utils.removeClass(this.containerElement, animation.class);
+    utils.removeClass(this.containerElement, animation.show);
+    utils.addClass(this.containerElement, animation.class);
+    utils.addClass(this.containerElement, animation.hide);
+  }
   // Don't just disappear the slide. Mark it as fading, which
   // keeps it on the screen, but at a reduced z-index.
   // Then set a timer to remove the fading state in 1s.
   utils.addClass(this.containerElement, 'remark-fading');
   setTimeout(function(){
       utils.removeClass(self.containerElement, 'remark-fading');
+      if (animation.enabled) {
+        utils.removeClass(self.containerElement, animation.hide);
+      }
   }, 1000);
 };
 

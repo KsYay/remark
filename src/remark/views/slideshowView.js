@@ -8,7 +8,7 @@ var SlideView = require('./slideView')
 
 module.exports = SlideshowView;
 
-function SlideshowView (events, dom, containerElement, slideshow) {
+function SlideshowView (events, dom, options, slideshow) {
   var self = this;
 
   self.events = events;
@@ -16,8 +16,11 @@ function SlideshowView (events, dom, containerElement, slideshow) {
   self.slideshow = slideshow;
   self.scaler = new Scaler(events, slideshow);
   self.slideViews = [];
+  self.animation = {};
+  self.options = options;
 
-  self.configureContainerElement(containerElement);
+  self.configAnimation(options.animation);
+  self.configureContainerElement(options.container);
   self.configureChildElements();
 
   self.updateDimensions();
@@ -94,6 +97,21 @@ function handleFullscreen(self) {
 
 SlideshowView.prototype.isEmbedded = function () {
   return this.containerElement !== this.dom.getBodyElement();
+};
+
+SlideshowView.prototype.configAnimation = function(animation) {
+  var self = this;
+
+  if (!animation || typeof animation === "undefined") {
+    animation = {};
+  }
+
+  self.animation = {
+    enabled: animation.enabled || false,
+    class: animation.class || 'animated',
+    show: animation.show || 'fadeIn',
+    hide: animation.hide || 'fadeOut'
+  };
 };
 
 SlideshowView.prototype.configureContainerElement = function (element) {
@@ -230,7 +248,7 @@ SlideshowView.prototype.showSlide =  function (slideIndex) {
 
   self.events.emit("beforeShowSlide", slideIndex);
 
-  slideView.show();
+  slideView.show(self.animation);
 
   if (nextSlideView) {
     self.previewArea.innerHTML = nextSlideView.containerElement.outerHTML;
@@ -248,7 +266,7 @@ SlideshowView.prototype.hideSlide = function (slideIndex) {
     ;
 
   self.events.emit("beforeHideSlide", slideIndex);
-  slideView.hide();
+  slideView.hide(self.animation);
   self.events.emit("afterHideSlide", slideIndex);
 
 };

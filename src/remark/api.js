@@ -40,7 +40,7 @@ Api.prototype.create = function (options) {
   events.setMaxListeners(0);
 
   slideshow = new Slideshow(events, options);
-  slideshowView = new SlideshowView(events, this.dom, options.container, slideshow);
+  slideshowView = new SlideshowView(events, this.dom, options, slideshow);
   controller = options.controller || new DefaultController(events, this.dom, slideshowView, options.navigation);
 
   return slideshow;

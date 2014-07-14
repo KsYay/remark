@@ -70,7 +70,7 @@ describe('SlideView', function () {
         , slideView = new SlideView(new EventEmitter(), slideshow, scaler, slide)
         ;
 
-        slideView.show();
+        slideView.show({});
 
         var classes = utils.getClasses(slideView.containerElement);
         classes.should.include('remark-visible');
@@ -83,7 +83,7 @@ describe('SlideView', function () {
         ;
         utils.addClass(slideView.containerElement, 'remark-fading');
 
-        slideView.show();
+        slideView.show({});
 
         var classes = utils.getClasses(slideView.containerElement);
         classes.should.include('remark-visible');
@@ -98,7 +98,7 @@ describe('SlideView', function () {
         ;
         utils.addClass(slideView.containerElement, 'remark-visible');
 
-        slideView.hide();
+        slideView.hide({});
 
         var classes = utils.getClasses(slideView.containerElement);
         classes.should.not.include('remark-visible');
