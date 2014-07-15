@@ -37,6 +37,7 @@ Api.prototype.create = function (options) {
   options = applyDefaults(this.dom, options);
 
   events = new EventEmitter();
+
   events.setMaxListeners(0);
 
   slideshow = new Slideshow(events, options);
