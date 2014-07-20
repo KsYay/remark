@@ -218,7 +218,7 @@ SlideshowView.prototype.updateSlideViews = function () {
   });
 
   self.slideViews = self.slideshow.getSlides().map(function (slide) {
-    return new SlideView(self.events, self.slideshow, self.scaler, slide);
+    return new SlideView(self.events, self.slideshow, self.scaler, slide, self.options.progressbar);
   });
 
   self.slideViews.forEach(function (slideView) {
