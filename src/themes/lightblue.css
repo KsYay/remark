@@ -1,0 +1,234 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body
+{
+    font-family: 'Droid Serif';
+
+    color: #5E9AD1;
+    background-color: #5D82A5 !important;
+}
+h1,
+h2,
+h3
+{
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 400;
+
+    margin-bottom: 0;
+}
+.remark-code,
+.remark-inline-code
+{
+    font-family: 'Ubuntu Mono';
+}
+.remark-slide-content h1
+{
+    font-size: 3em;
+}
+.remark-slide-content h2
+{
+    font-size: 2em;
+}
+.remark-slide-content h3
+{
+    font-size: 1.6em;
+}
+.footnote
+{
+    position: absolute;
+    bottom: 3em;
+}
+li p
+{
+    line-height: 1.25em;
+}
+.red
+{
+    color: #fa0000;
+}
+.large
+{
+    font-size: 2em;
+}
+a,
+a > code
+{
+    text-decoration: underline;
+
+    color: #007AFF;
+}
+code
+{
+    -moz-border-radius: 5px;
+         border-radius: 5px;
+    background: #e7e8e2;
+
+    -web-border-radius: 5px;
+}
+
+
+.remark-slide-content
+{
+    background-color: #D7F2FF !important;
+}
+
+.remark-slide-scaler
+{
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+
+.remark-inline-code
+{
+    color: #fff !important;
+    background-color: #A0B6E5 !important;
+}
+
+.pull-left
+{
+    float: left;
+
+    width: 47%;
+}
+.pull-right
+{
+    float: right;
+
+    width: 47%;
+}
+.pull-right ~ p
+{
+    clear: both;
+}
+#slideshow .slide .content code
+{
+    font-size: .8em;
+}
+#slideshow .slide .content pre code
+{
+    font-size: .9em;
+
+    padding: 15px;
+}
+
+
+/* Two-column layout */
+.left-column
+{
+    float: left;
+
+    width: 20%;
+    height: 92%;
+
+    color: #8AC1F3;
+}
+.left-column h2:last-of-type,
+.left-column h3:last-child
+{
+    color: #5E9AD1;
+}
+.right-column
+{
+    float: right;
+
+    width: 75%;
+    padding-top: 1em;
+}
+
+/* Base16 Atelier Lakeside Light - Theme */
+/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/lakeside/) */
+/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
+/* https://github.com/jmblog/color-themes-for-highlightjs */
+
+/* Atelier Lakeside Light Comment */
+.hljs-comment,
+.hljs-title {
+  color: #5a7b8c !important;
+}
+
+/* Atelier Lakeside Light Red */
+.hljs-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-regexp,
+.ruby .hljs-constant,
+.xml .hljs-tag .hljs-title,
+.xml .hljs-pi,
+.xml .hljs-doctype,
+.html .hljs-doctype,
+.css .hljs-id,
+.css .hljs-class,
+.css .hljs-pseudo {
+  color: #d22d72 !important;
+}
+
+/* Atelier Lakeside Light Orange */
+.hljs-number,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-built_in,
+.hljs-literal,
+.hljs-params,
+.hljs-constant {
+  color: #935c25 !important;
+}
+
+/* Atelier Lakeside Light Yellow */
+.hljs-ruby .hljs-class .hljs-title,
+.css .hljs-rules .hljs-attribute {
+  color: #8a8a0f !important;
+}
+
+/* Atelier Lakeside Light Green */
+.hljs-string,
+.hljs-value,
+.hljs-inheritance,
+.hljs-header,
+.ruby .hljs-symbol,
+.xml .hljs-cdata {
+  color: #568c3b !important;
+}
+
+/* Atelier Lakeside Light Aqua */
+.css .hljs-hexcolor {
+  color: #2d8f6f !important;
+}
+
+/* Atelier Lakeside Light Blue */
+.hljs-function,
+.python .hljs-decorator,
+.python .hljs-title,
+.ruby .hljs-function .hljs-title,
+.ruby .hljs-title .hljs-keyword,
+.perl .hljs-sub,
+.javascript .hljs-title,
+.coffeescript .hljs-title {
+  color: #257fad !important;
+}
+
+/* Atelier Lakeside Light Purple */
+.hljs-keyword,
+.javascript .hljs-function {
+  color: #5d5db1 !important;
+}
+
+.hljs {
+  display: block !important;
+  overflow-x: auto !important;
+  background: #ebf8ff !important;
+  color: #516d7b !important;
+  padding: 0.5em !important;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.5 !important;
+}

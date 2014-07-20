@@ -1,0 +1,279 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body
+{
+    font-family: 'Droid Serif';
+
+    color: #fff;
+    background-color: #000 !important;
+}
+h1,
+h2,
+h3
+{
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 400;
+
+    margin-bottom: 0;
+}
+.remark-code,
+.remark-inline-code
+{
+    font-family: 'Ubuntu Mono';
+}
+.remark-slide-content h1
+{
+    font-size: 3em;
+}
+.remark-slide-content h2
+{
+    font-size: 2em;
+}
+.remark-slide-content h3
+{
+    font-size: 1.6em;
+}
+.footnote
+{
+    position: absolute;
+    bottom: 3em;
+}
+li p
+{
+    line-height: 1.25em;
+}
+.red
+{
+    color: #fa0000;
+}
+.large
+{
+    font-size: 2em;
+}
+a,
+a > code
+{
+    text-decoration: none;
+
+    color: rgb(249, 38, 114);
+}
+code
+{
+    -moz-border-radius: 5px;
+         border-radius: 5px;
+    background: #e7e8e2;
+
+    -web-border-radius: 5px;
+}
+
+
+.remark-slide-content
+{
+    background-color: #222 !important;
+}
+
+.remark-slide-scaler
+{
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+
+.remark-inline-code
+{
+    color: #555 !important;
+    background-color: #a4a4a4 !important;
+}
+
+.pull-left
+{
+    float: left;
+
+    width: 47%;
+}
+.pull-right
+{
+    float: right;
+
+    width: 47%;
+}
+.pull-right ~ p
+{
+    clear: both;
+}
+#slideshow .slide .content code
+{
+    font-size: .8em;
+}
+#slideshow .slide .content pre code
+{
+    font-size: .9em;
+
+    padding: 15px;
+}
+
+
+/* Two-column layout */
+.left-column
+{
+    float: left;
+
+    width: 20%;
+    height: 92%;
+
+    color: #ccc;
+}
+.left-column h2:last-of-type,
+.left-column h3:last-child
+{
+    color: #fff;
+}
+.right-column
+{
+    float: right;
+
+    width: 75%;
+    padding-top: 1em;
+}
+/*
+Monokai style - ported by Luigi Maselli - http://grigio.org
+*/
+
+.hljs
+{
+    display: block !important;
+    overflow-x: auto !important;
+
+    padding: .5em !important;
+
+    border: 1px solid #999;
+    background: #272822 !important;
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-keyword,
+.hljs-literal,
+.hljs-strong,
+.hljs-change,
+.hljs-winutils,
+.hljs-flow,
+.lisp .hljs-title,
+.clojure .hljs-built_in,
+.nginx .hljs-title,
+.tex .hljs-special
+{
+    color: #f92672 !important;
+}
+
+.hljs
+{
+    color: #ddd !important;
+}
+
+.hljs .hljs-constant,
+.asciidoc .hljs-code
+{
+    color: #66d9ef !important;
+}
+
+.hljs-code,
+.hljs-class .hljs-title,
+.hljs-header
+{
+    color: white !important;
+}
+
+.hljs-link_label,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.hljs-value,
+.hljs-regexp
+{
+    color: #bf79db !important;
+}
+
+.hljs-link_url,
+.hljs-tag .hljs-value,
+.hljs-string,
+.hljs-bullet,
+.hljs-subst,
+.hljs-title,
+.hljs-emphasis,
+.haskell .hljs-type,
+.hljs-preprocessor,
+.hljs-pragma,
+.ruby .hljs-class .hljs-parent,
+.hljs-built_in,
+.django .hljs-template_tag,
+.django .hljs-variable,
+.smalltalk .hljs-class,
+.hljs-javadoc,
+.django .hljs-filter .hljs-argument,
+.smalltalk .hljs-localvars,
+.smalltalk .hljs-array,
+.hljs-attr_selector,
+.hljs-pseudo,
+.hljs-addition,
+.hljs-stream,
+.hljs-envvar,
+.apache .hljs-tag,
+.apache .hljs-cbracket,
+.tex .hljs-command,
+.hljs-prompt
+{
+    color: #a6e22e !important;
+}
+
+.hljs-comment,
+.java .hljs-annotation,
+.smartquote,
+.hljs-blockquote,
+.hljs-horizontal_rule,
+.python .hljs-decorator,
+.hljs-template_comment,
+.hljs-pi,
+.hljs-doctype,
+.hljs-deletion,
+.hljs-shebang,
+.apache .hljs-sqbracket,
+.tex .hljs-formula
+{
+    color: #75715e !important;
+}
+
+.hljs-keyword,
+.hljs-literal,
+.css .hljs-id,
+.hljs-phpdoc,
+.hljs-title,
+.hljs-header,
+.haskell .hljs-type,
+.vbscript .hljs-built_in,
+.rsl .hljs-built_in,
+.smalltalk .hljs-class,
+.diff .hljs-header,
+.hljs-chunk,
+.hljs-winutils,
+.bash .hljs-variable,
+.apache .hljs-tag,
+.tex .hljs-special,
+.hljs-request,
+.hljs-status
+{
+    font-weight: bold !important;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata
+{
+    opacity: .5 !important;
+}

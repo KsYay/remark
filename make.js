@@ -84,6 +84,9 @@ target.boilerplate = function () {
 target.minify = function () {
   console.log('Minifying...');
   run('uglifyjs out/remark.js', {silent: true}).output.to('out/remark.min.js');
+
+  // compress css themes
+  compressThemes();
 };
 
 // Helper functions
@@ -92,6 +95,22 @@ var path = require('path')
   , config = require('./package.json').config
   , ignoredStyles = ['brown_paper', 'school_book', 'pojoaque']
   ;
+
+function compressThemes() {
+  var compressor = require('node-minify');
+  var themes = config.themes;
+  
+  for (var i in themes) {
+    new compressor.minify({
+        type: 'clean-css',
+        fileIn: 'src/themes/' + themes[i] + ".css",
+        fileOut: 'out/remark_' + themes[i] + ".min.css",
+        callback: function(err, min){
+            if (err) {console.log(err);}
+        }
+    });
+  }
+}
 
 function bundleResources (target) {
   var resources = {
